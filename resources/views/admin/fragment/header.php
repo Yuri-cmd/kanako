@@ -2,23 +2,13 @@
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
-            <div class="navbar-brand-box">
+            <div class="navbar-brand-box" style="background-color: #00a65a !important;">
                 <a href="index.html" class="logo logo-dark">
-                                <span class="logo-sm">
-                                    <img src="<?=URL::to('public/assets/images/logo-sm.png')?>" alt="" height="22">
-                                </span>
-                    <span class="logo-lg">
-                                    <img src="<?=URL::to('public/assets/images/logo-dark.png')?>" alt="" height="17">
-                                </span>
+                    <span class="logo-lg" style="color: #fff; font-size: 2rem;"><i class="mdi mdi-bulletin-boar"></i> <b>E.S.A.M.A.</b> </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="<?=URL::to('public/assets/images/logo-sm.png')?>" alt="" height="22">
-                                </span>
-                    <span class="logo-lg">
-                                    <img style="max-width: 100%;" src="<?=URL::to('files/logos/sinlogosn.png')?>" alt="" height="70">
-                                </span>
+                    <span class="logo-lg" style="color: #fff; font-size: 2rem;"><i class="mdi mdi-bulletin-boar"></i> <b>E.S.A.M.A.</b> </span>
                 </a>
             </div>
 
@@ -159,8 +149,6 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="<?=URL::to('files/usuarios/no_imagen.png')?>"
-                         alt="Header Avatar">
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->

@@ -39,9 +39,9 @@
                     <h4 class="card-title">Lista de Ventas</h4>
 
                     <div class="card-title-desc">
-                        <a href="/ventas/productos" class="btn btn-primary button-link"><i class="fa fa-plus"></i> Facturar Productos</a>
+                        <a hidden href="/ventas/productos" class="btn btn-primary button-link"><i class="fa fa-plus"></i> Facturar Productos</a>
                         <a hidden href="/ventas/servicios" class="btn btn-primary button-link"><i class="fa fa-plus"></i> Facturar Servicios</a>
-                        <a href="/nota/electronica" class="btn btn-success button-link"><i class="fa fa-plus"></i> Agregar Nota Electronica</a>
+                        <a hidden href="/nota/electronica" class="btn btn-success button-link"><i class="fa fa-plus"></i> Agregar Nota Electronica</a>
                         <button data-bs-toggle="modal" data-bs-target="#ventas-pdf-reporte" class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Exportar a PDF Reporte de Venta</button>
                         <button data-bs-toggle="modal" data-bs-target="#tipo-cambio" class="btn btn-success"><i class="fa fa-file-pdf-o"></i>Tipo de Cambio</button>
                         <button data-bs-toggle="modal" data-bs-target="#ventas-pdf-reporteganancia" class="btn btn-info"><i class="fa fa-file-pdf-o"></i>Reporte de Venta Ganancias</button>
@@ -729,7 +729,9 @@
                 {
                     targets: 7,
                     render(data, type, row) {
+                        
                         data = data.split("-")
+                        console.log(data);
                         var desData = row[9].split('--');
                         if (!(desData[1] == '-')) {
                             if (data[0] == '1') {
@@ -761,6 +763,7 @@
                 {
                     targets: 9,
                     render: function(data, type, row, meta) {
+                       
                         /*  console.log(row[7].split('-')) */
                         if (row[8] == 1) {
                             let estadoSunat = row[7].split('-')[0]

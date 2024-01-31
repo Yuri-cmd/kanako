@@ -609,8 +609,8 @@ class VentasController extends Controller
         $c_venta = new Venta();
         $c_tido = new DocumentoEmpresa();
         $c_detalle = new ProductoVenta();
-        /*  $c_servicio = new VentaServicio(); */
-        // $c_curl = new SendCurlVenta();
+        $c_servicio = new VentaServicio(); 
+        //$c_curl = new SendCurlVenta();
         $c_sunat = new VentaSunat();
         $c_varios = new Varios();
 
@@ -634,22 +634,22 @@ class VentasController extends Controller
             $numDoc = $_POST['num_doc'] == '' ? '' : $_POST['num_doc'];
             $nombre = $_POST['nom_cli'] == '' ? '' : $_POST['nom_cli'];
             $c_cliente->modificar("SD" . $c_varios->generarCodigo(5), $nombre, $_POST['id_cliente']);
-            /*             $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));
-            $c_cliente->insertar(); */
+            $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));
+            $c_cliente->insertar(); 
         } else {
             $numDoc = $_POST['num_doc'] == '' ? '' : $_POST['num_doc'];
             $nombre = $_POST['nom_cli'] == '' ? '' : $_POST['nom_cli'];
             $c_cliente->modificar($numDoc, $nombre, $_POST['id_cliente']);
-            /*  $numDoc = $_POST['num_doc'] == '' ? '' : $_POST['num_doc'];
+            $numDoc = $_POST['num_doc'] == '' ? '' : $_POST['num_doc'];
             $nombre = $_POST['nom_cli'] == '' ? '' : $_POST['nom_cli'];
-            $c_cliente->modificar($numDoc, $nombre, $_POST['id_cliente']); */
-            /*  if (!$c_cliente->verificarDocumento()) {
+            $c_cliente->modificar($numDoc, $nombre, $_POST['id_cliente']); 
+            if (!$c_cliente->verificarDocumento()) {
                 $c_cliente->insertar();
             } else {
                 $numDoc = $_POST['num_doc'] == '' ? '' : $_POST['num_doc'];
                 $nombre = $_POST['nom_cli'] == '' ? '' : $_POST['nom_cli'];
                 $c_cliente->modificar($numDoc, $nombre, $_POST['id_cliente']);
-            } */
+            }
         }
 
         $resultado["email"] = $c_cliente->getEmail() ? $c_cliente->getEmail() : '';
@@ -672,11 +672,11 @@ class VentasController extends Controller
             $c_cliente->setDatos('-');
         }
 
-        /*  $dataSend['cliente'] = json_encode([
+       $dataSend['cliente'] = json_encode([
             'doc_num' => $c_cliente->getDocumento(),
             'nom_RS' => $c_cliente->getDatos(),
             'direccion' => $direccionselk
-        ]); */
+        ]);
         $c_venta->setDireccion($direccionselk);
         $c_tido->setIdEmpresa($id_empresa);
         $c_tido->setIdTido(filter_input(INPUT_POST, 'tipo_doc'));
@@ -696,7 +696,7 @@ class VentasController extends Controller
         $c_venta->setTotal(filter_input(INPUT_POST, 'total'));
 
 
-        /*      $dataSend['apli_igv'] = $_POST['apli_igv'] == 1;
+        $dataSend['apli_igv'] = $_POST['apli_igv'] == 1;
         $dataSend['total'] = $c_venta->getTotal();
         $dataSend['serie'] = $c_tido->getSerie();
         $dataSend['numero'] = $c_tido->getNumero();
@@ -705,7 +705,7 @@ class VentasController extends Controller
         $dataSend['tipo_pago'] = $c_venta->getIdTipoPago();
         $dataSend['igv_venta'] = $igv_empr_sel;
         $dataSend['dias_pagos'] = [];
-        $dataSend['moneda'] = "PEN"; */
+        $dataSend['moneda'] = "PEN"; 
 
         $listaPagos = json_decode($_POST['dias_lista'], true);
 
@@ -717,18 +717,18 @@ class VentasController extends Controller
                 $sql = "insert into dias_ventas set id_venta='{$c_venta->getIdVenta()}',
                     monto='{$diaP['monto']}',fecha='{$diaP['fecha']}',estado='0'";
                 $c_venta->exeSQL($sql);
-                /*  $dataSend['dias_pagos'][] = [
+                $dataSend['dias_pagos'][] = [
                     "monto" => $diaP['monto'],
                     "fecha" => $diaP['fecha']
-                ]; */
+                ]; 
             }
-            /*  $dataSend['dias_pago'] = json_encode($dataSend['dias_pagos']); */
+            $dataSend['dias_pago'] = json_encode($dataSend['dias_pagos']); 
 
 
-            /* $c_detalle->setIdVenta($c_venta->getIdVenta()); */
+            $c_detalle->setIdVenta($c_venta->getIdVenta()); 
             $c_detalle->eliminar($_POST['idVenta']);
 
-            /*  $c_servicio->eliminar($_POST['idVenta']);   */
+            $c_servicio->eliminar($_POST['idVenta']);   
 
             foreach ($array_detalle as $fila) {
                 $c_detalle->setIdProducto($fila['productoid']);
@@ -738,18 +738,18 @@ class VentasController extends Controller
                 $c_detalle->setIdVenta($_POST['idVenta']);
                 $c_detalle->setPrecioUsado(isset($fila['precio_usado'])?$fila['precio_usado']:1);
                 $c_detalle->insertar();
-                /*   $dataSend['productos'][] = [
+                $dataSend['productos'][] = [
                     "precio" => $fila['precio'],
                     "cantidad" => $fila['cantidad'],
                     "cod_pro" => $fila['productoid'],
                     "cod_sunat" => "",
                     "descripcion" => $fila['descripcion']
-                ]; */
+                ]; 
             }
 
 
             //definir url segun el tipo de documento sunat
-            /*   if ($c_venta->getIdTido() == 1) {
+            if ($c_venta->getIdTido() == 1) {
                 $archivo = "boleta";
             }
             if ($c_venta->getIdTido() == 2) {
@@ -801,7 +801,7 @@ class VentasController extends Controller
                 $c_sunat->insertar();
 
                 $resultado["valor"] = $c_venta->getIdVenta();
-            } */
+            } 
             $resultado["nomFact"] =  '2020' . ".pdf";
             $resultado["urlFact"] = URL::to('/venta/comprobante/pdf/' . $_POST['idVenta'] . '/' . '2020');
             $resultado["urlFactd"] = URL::to('/venta/comprobante/pdfd/' . $_POST['idVenta'] . '/2020');

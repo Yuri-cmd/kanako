@@ -1,4 +1,4 @@
-<div class="vertical-menu">
+<div class="vertical-menu" style="background: #00a65a;">
 
     <div data-simplebar class="h-100">
 
@@ -6,19 +6,19 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">Main</li>
+                <li class="menu-title" style="color: #fff !important;">Main</li>
 
                 <li class="item-nv-menu">
-                    <a href="/admin" class="waves-effect menu-link">
-                        <i class="ti-home"></i><span hidden class="badge rounded-pill bg-primary float-end">2</span>
-                        <span>Dashboard</span>
+                    <a href="/admin" class="waves-effect menu-link" style="color: #fff;">
+                        <i class="ti-home" style="color: #fff !important;"></i><span hidden class="badge rounded-pill bg-primary float-end">2</span>
+                        <span style="color: #fff !important;">Dashboard</span>
                     </a>
                 </li>
 
                 <li hidden>
                     <a href="/calendario" class=" waves-effect menu-link">
-                        <i class="ti-calendar"></i>
-                        <span>Calendario</span>
+                        <i class="ti-calendar" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">Calendario</span>
                     </a>
                 </li>
 
@@ -34,7 +34,7 @@
                     </ul>
                 </li>
 
-                <li class="menu-title">Modulos</li>
+                <li class="menu-title" style="color: #fff !important;">Modulos</li>
 
                 <li hidden>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">

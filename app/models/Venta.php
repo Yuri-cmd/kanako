@@ -361,7 +361,7 @@ class Venta
         $sql = "UPDATE ventas set apli_igv='$this->apli_igv', id_tido='$this->id_tido',id_tipo_pago='$this->id_tipo_pago',fecha_emision='$this->fecha',
         fecha_vencimiento='$this->fechaVenc',dias_pagos='$this->dias_pagos',direccion='$this->direccion',
         id_cliente='$this->id_cliente',total='$this->total',igv='$this->igv',id_empresa='$this->id_empresa',
-                   observacion='$this->observa' WHERE id_venta = '$id_venta' ";
+                   observacion='$this->observa', serie='$this->serie', numero='$this->numero' WHERE id_venta = '$id_venta' ";
 
         $result = $this->conectar->query($sql);
         if ($result) {

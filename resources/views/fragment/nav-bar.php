@@ -1,4 +1,4 @@
-<div class="vertical-menu">
+<div class="vertical-menu" style="background: #00a65a;">
 
     <div data-simplebar class="h-100">
 
@@ -6,19 +6,19 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">Main</li>
+                <li class="menu-title" style="color: #fff !important;">Main</li>
 
                 <li class="item-nv-menu">
-                    <a href="/" class="waves-effect menu-link">
-                        <i class="ti-home"></i><span hidden class="badge rounded-pill bg-primary float-end">2</span>
+                    <a href="/" class="waves-effect menu-link" style="color: #fff !important;">
+                        <i class="ti-home" style="color: #fff !important;"></i><span hidden class="badge rounded-pill bg-primary float-end">2</span>
                         <span>DASHBOARD</span>
                     </a>
                 </li>
 
                 <li hidden>
                     <a href="/calendario" class=" waves-effect menu-link">
-                        <i class="ti-calendar"></i>
-                        <span>Calendario</span>
+                        <i class="ti-calendar" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">Calendario</span>
                     </a>
                 </li>
 
@@ -35,43 +35,43 @@
                     </ul>
                 </li>
 
-                <li class="menu-title">Modulos</li>
+                <li class="menu-title" style="color: #fff !important;">Modulos</li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ti-package"></i>
-                        <span>FACTURACIÓN</span>
+                        <i class="ti-package" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">FACTURACIÓN</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="/ventas" class=" menu-link">Ventas</a></li>
-                        <li><a href="/guias/remision" class=" menu-link">Guías Remisión</a></li>
-                        <li><a href="/nota/electronica/lista" class=" menu-link">Notas Electrónicas</a></li>
+                        <li><a href="/ventas" class=" menu-link" style="color: #fff !important;">Ventas</a></li>
+                        <li><a href="/guias/remision" class=" menu-link" style="color: #fff !important;">Guías Remisión</a></li>
+                        <li><a href="/nota/electronica/lista" class=" menu-link" style="color: #fff !important;">Notas Electrónicas</a></li>
                     </ul>
                 </li>
 
 
                 <li>
                     <a href="/cotizaciones" class=" waves-effect menu-link">
-                        <i class="fa fa-align-justify"></i>
-                        <span>COTIZACIONES</span>
+                        <i class="fa fa-align-justify" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">COTIZACIONES</span>
                     </a>
                 </li>
                 <li>
                     <a href="/cobranzas" class=" waves-effect menu-link">
-                        <i class="fa fa-money-bill"></i>
-                        <span>CUENTAS POR COBRAR</span>
+                        <i class="fa fa-money-bill" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">CUENTAS POR COBRAR</span>
                     </a>
                 </li>
                 <li>
                     <a href="/pagos" class=" waves-effect menu-link">
-                        <i class="fa fa-money-bill"></i>
-                        <span>CUENTAS POR PAGAR</span>
+                        <i class="fa fa-money-bill" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">CUENTAS POR PAGAR</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ti-package"></i>
-                        <span>CAJA</span>
+                        <i class="ti-package" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">CAJA</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="/cajaRegistros" class=" menu-link">Registros</a></li>
@@ -81,32 +81,32 @@
                 </li>
                 <li>
                     <a href="/compras" class=" menu-link">
-                        <i class="ti-calendar"></i>
-                        <span>COMPRAS</span>
+                        <i class="ti-calendar" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">COMPRAS</span>
                     </a>
                 </li>
                 <li >
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ti-view-grid"></i>
-                        <span>ALMACÉN</span>
+                        <i class="ti-view-grid" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">ALMACÉN</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a  href="/almacen/productos" class=" menu-link">Kardex</a></li>
+                        <li><a  href="/almacen/productos" class=" menu-link" style="color: #fff !important;">Kardex</a></li>
                     </ul>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a  href="/almacen/intercambio/productos" class=" menu-link">Intecambio Productos</a></li>
+                        <li><a  href="/almacen/intercambio/productos" class=" menu-link" style="color: #fff !important;">Intecambio Productos</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="/clientes" class=" waves-effect menu-link">
-                        <i class="ti-calendar"></i>
-                        <span>CLIENTES</span>
+                        <i class="ti-calendar" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">CLIENTES</span>
                     </a>
                 </li>
                  <li>
                     <a href="/orden-trabajo" class=" waves-effect menu-link">
-                        <i class="ti-calendar"></i>
-                        <span>ORDEN DE TRABAJO</span>
+                        <i class="ti-calendar" style="color: #fff !important;"></i>
+                        <span style="color: #fff !important;">ORDEN DE TRABAJO</span>
                     </a>
                 </li>
              <!--    <?php

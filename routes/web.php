@@ -1,6 +1,7 @@
 <?php
 
 	Route::get('/login', "ViewController@login");
+	Route::get('/login_prueba', "UsuarioController@prueba");
 	Route::get('/logout', "UsuarioController@logout");
 	Route::get('/ge/bar/code', "ConsultaDelcontroller@generarBarCode");
 

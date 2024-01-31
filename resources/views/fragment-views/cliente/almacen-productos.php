@@ -164,7 +164,7 @@ foreach ($a_productos as $fila) {
                                 <label>Precio Unidad: </label>
                                 <input v-model="edt.precio_unidad" id="precio_unidad" class="form-control">
                             </div>
-                            <div class="form-group col-md-12">
+                            <div hidden class="form-group col-md-12">
                                 <label>Precio Club: </label>
                                 <input v-model="edt.precio4" id="precio4" class="form-control">
                             </div>
@@ -172,7 +172,7 @@ foreach ($a_productos as $fila) {
                                 <label>Precio 1: </label>
                                 <input v-model="edt.precio" id="precio1" class="form-control">
                             </div>
-                            <div class="form-group col-md-12">
+                            <div hidden class="form-group col-md-12">
                                 <label>Precio 2: </label>
                                 <input v-model="edt.precio2" id="precio2" class="form-control">
                             </div>
@@ -1161,17 +1161,18 @@ https://cdn.jsdelivr.net/npm/@pokusew/escpos@3.0.8/dist/index.min.js
                      $('#precio3').val(resp.precio3)
                      isNaN(resp.precio4) ? $('#precio4').val('') : parseFloat(resp.precio4 + "").toFixed(2) */
 
+
                     app._data.edt.precio = resp.precio == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio + "").toFixed(2)
                     app._data.edt.precio2 = resp.precio2 == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio2 + "").toFixed(2)
                     /*    .toFixed(2) */
                     app._data.edt.precio3 = resp.precio3 == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio3 + "").toFixed(2)
                     app._data.edt.precio4 = resp.precio4 == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio4 + "").toFixed(2)
                     app._data.edt.precio_unidad = resp.precio_unidad == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio_unidad + "").toFixed(2)
-
+                    console.log(resp.precio4);
                     $('#precio1').val(resp.precio == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio + "").toFixed(2))
                     $('#precio2').val(resp.precio2 == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio2 + "").toFixed(2))
                     $('#precio3').val(resp.precio3 == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio3 + "").toFixed(2))
-                    $('#precio3').val(resp.precio4 == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio4 + "").toFixed(2))
+                    $('#precio4').val(resp.precio4 == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio4 + "").toFixed(2))
                     $('#precio_unidad').val(resp.precio_unidad == null ? parseFloat(0 + "").toFixed(2) : parseFloat(resp.precio_unidad + "").toFixed(2))
                     app._data.edt.cod_prod = cod
                     /* if (resp.res) {

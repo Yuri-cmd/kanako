@@ -10,7 +10,7 @@ $device_app = Tools::getInfoDeviceConect();
 <head>
 
     <meta charset="utf-8">
-    <title>Facturación Eletrónica HATUNA</title>
+    <title>Facturación Eletrónica ESAMA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Sistema de Ventas & Facturación Eletrónica" name="description">
     <meta content="Themesbrand" name="author">

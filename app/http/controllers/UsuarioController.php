@@ -15,6 +15,11 @@ class UsuarioController extends Controller
         $this->usuario->setClave($_POST['clave']);
         return json_encode($this->usuario->login());
     }
+    public function prueba(){
+        $this->usuario->setUsuario($_GET['user']);
+        $this->usuario->setClave($_GET['clave']);
+        return json_encode($this->usuario->login(1));
+    }
     public function logout(){
         session_destroy();
         header("Location: ".URL::to("/login"));

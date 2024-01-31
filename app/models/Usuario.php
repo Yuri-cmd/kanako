@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Redirect;
+
 class Usuario
 {
     private $usuario_id;
@@ -180,16 +182,17 @@ class Usuario
         $this->estado = $estado;
     }
 
-    public function login(){
+    public function login($tipo = 0){
         $respuesta=["res"=>false];
         $sql="select * from usuarios where email='{$this->usuario}' or usuario='{$this->usuario}'";
         $resul = $this->conectar->query($sql);
         if ($row = $resul->fetch_assoc()){
-            if ($row['clave']==sha1($this->clave)){
+
+            if ($row['clave']==$this->clave){
                 if ($row["estado"]==1){
                     $sql = "select * 
                     from empresas 
-                    where id_empresa = '{$row['id_empresa']}'";
+                    where id_empresa = '12'";
 
                     $empr = $this->conectar->query($sql)->fetch_assoc();
 
@@ -206,7 +209,7 @@ class Usuario
                         'id_empresa'=>$empr['id_empresa'],
                         'nombre_empresa'=> $empr['razon_social'],
                         'logo_empresa'=>$empr['logo'],
-                        'sucursal'=>$row['sucursal'],
+                        'sucursal'=>1,
                         'ruc_empr'=>$empr['ruc']
                     ];
                     $_SESSION =$token_u;
@@ -219,6 +222,11 @@ class Usuario
                         $respuesta['ruta']="/";
                     }
 
+                    if($tipo == 1){
+                        $_SESSION["_token"] = $respuesta["token"];
+
+                        header("Location: http://localhost/kanako/");
+                    }
                 }else{
                     $respuesta['msg']="Usuario Bloqueado";
                 }

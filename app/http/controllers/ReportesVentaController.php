@@ -1582,7 +1582,6 @@ class ReportesVentaController extends Controller
     $sql = "select * from ventas where id_venta=" . $venta;
     $datoVenta = $this->conexion->query($sql)->fetch_assoc();
     $datoEmpresa = $this->conexion->query("select * from empresas where id_empresa=" . $datoVenta['id_empresa'])->fetch_assoc();
-
     $igv_venta_sel = $datoVenta['igv'];
 
     $isSEgundoPago = false;
